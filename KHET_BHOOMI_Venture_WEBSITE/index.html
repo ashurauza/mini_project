@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khet Bhoomi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Khet Bhoomi</h1>
+        <nav>
+            <ul>
+                <li><a href="#map">Google Map Simulation</a></li>
+                <li><a href="#login">Login / Sign Up</a></li>
+                <li><a href="#kyc">KYC Verification</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="map">
+        <h2>Google Map Simulation</h2>
+        <div id="mapContainer">Map will be displayed here.</div>
+    </section>
+
+    <section id="login">
+        <h2>Login / Sign Up</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="kyc">
+        <h2>KYC Verification</h2>
+        <form id="kycForm">
+            <label for="aadhaar">Aadhaar Number:</label>
+            <input type="text" id="aadhaar" name="aadhaar" required>
+            <button type="submit">Verify</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Khet Bhoomi. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

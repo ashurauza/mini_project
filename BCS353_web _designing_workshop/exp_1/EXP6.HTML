@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <script>
+        function validateForm() {
+            // Get input values
+            const name = document.getElementById('name').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validate Name
+            if (!validateName(name)) {
+                alert('Name should only contain alphabets and be at least 6 characters long.');
+                return false;
+            }
+
+            // Validate Password
+            if (!validatePassword(password)) {
+                alert('Password should be at least 6 characters long.');
+                return false;
+            }
+
+            // Form is valid
+            alert('Registration successful!');
+            return true;
+        }
+
+        function validateName(name) {
+            // Regex to check if the name contains only alphabets and has a minimum length of 6 characters
+            const regex = /^[a-zA-Z]{6,}$/;
+            return regex.test(name);
+        }
+
+        function validatePassword(password) {
+            // Check if the password has a minimum length of 6 characters
+            return password.length >= 6;
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #007acc;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+            color: #007acc;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007acc;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register</h1>
+        <form onsubmit="return validateForm()">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div>
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
